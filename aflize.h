@@ -1,9 +1,5 @@
-//
-// Created by Alex Moneger on 4/5/16.
-//
-
-#ifndef AFLIZE_AFLIZE_H
-#define AFLIZE_AFLIZE_H
+#ifndef AFLIZE_H
+#define AFLIZE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,4 +11,5 @@ void afl_forward(char* buf);
 }
 #endif
 
-#endif //AFLIZE_AFLIZE_H
+#endif //AFLIZE_H
+
