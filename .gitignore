@@ -1,3 +1,11 @@
+### Ignore everything from git, except aflize
+src/
+lib/
+include/
+!src/aflize.cpp
+!src/aflize.c
+!include/aflize.h
+
 ### C template
 # Object files
 *.o
