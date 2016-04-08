@@ -5,8 +5,8 @@ INC_DIR = include
 
 CC = afl-gcc
 CXX = afl-g++
-CFLAGS = -I$(INC_DIR)
-CPPFLAGS = -I$(INC_DIR)
+CFLAGS = -I$(INC_DIR) -L$(LIB_DIR) -Wl,-rpath -Wl,$(LIB_DIR)
+CPPFLAGS = -I$(INC_DIR) -L$(LIB_DIR) -Wl,-rpath -Wl,$(LIB_DIR)
 LIBS =
 
 _DEPS = aflize.h
