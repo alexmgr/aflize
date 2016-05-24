@@ -1,6 +1,9 @@
 #ifndef AFLIZE_H
 #define AFLIZE_H
 
+#define AFLIZE_BUF_SIZE 1024*1024
+#define AFLIZE_PERSIST_ITERATIONS 1000
+
 #ifdef __cplusplus
 extern "C" {
 #endif

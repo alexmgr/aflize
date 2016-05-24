@@ -2,7 +2,8 @@
 src/
 lib/
 include/
-!src/aflize.cpp
+!src/stdinalize.cpp
+!src/argvalize.cpp
 !src/aflize.c
 !include/aflize.h
 

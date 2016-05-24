@@ -13,15 +13,20 @@ _DEPS = aflize.h
 DEPS = $(patsubst %, $(INC_DIR)/%, $(_DEPS))
 
 SRC = $(wildcard $(SRC_DIR)/*.cpp)
-OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
-
+ARGV_SRC = $(filter-out src/stdinalize.cpp, $(SRC))
+STDIN_SRC = $(filter-out src/argvalize.cpp, $(SRC))
+ARGV_OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(ARGV_SRC))
+STDIN_OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(STDIN_SRC))
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(DEPS)
 	@mkdir -p $(@D)
 	$(CXX) -c -o $@ $< $(CPPFLAGS)
 
-aflized: $(OBJ)
-	$(CXX) -o $@ $^ $(CPPFLAGS) $(LIBS)
+argv: $(ARGV_OBJ)
+	$(CXX) -o aflized $^ $(CPPFLAGS) $(LIBS)
+
+stdin: $(STDIN_OBJ)
+	$(CXX) -o aflized $^ $(CPPFLAGS) $(LIBS)
 
 .PHONY: clean
 
