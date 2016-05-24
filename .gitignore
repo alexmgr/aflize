@@ -1,7 +1,7 @@
 ### Ignore everything from git, except aflize
-src/
+src/*
 lib/
-include/
+include/*
 !src/stdinalize.cpp
 !src/argvalize.cpp
 !src/aflize.c
