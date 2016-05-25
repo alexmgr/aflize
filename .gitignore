@@ -4,7 +4,7 @@ lib/
 include/*
 !src/stdinalize.cpp
 !src/argvalize.cpp
-!src/aflize.c
+!src/argvalize.c
 !include/aflize.h
 
 ### C template
