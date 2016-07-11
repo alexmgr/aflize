@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-void afl_forward(char* buf);
+void afl_forward(char* buf, size_t len);
 
 #ifdef __cplusplus
 }

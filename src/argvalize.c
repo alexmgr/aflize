@@ -21,16 +21,15 @@ int main(int argc, char **argv)
     long file_size = ftell(f);
     rewind(f);
 
-    char buf[file_size + 1];
+    char buf[file_size];
     if (fread(buf, file_size, 1, f) != 1) {
         fclose(f);
         perror("fread");
         exit(EXIT_FAILURE);
     }
-    buf[file_size] = 0;
     fclose(f);
 
-    afl_forward(buf);
+    afl_forward(buf, (size_t)file_size);
 
     return EXIT_SUCCESS;
 }

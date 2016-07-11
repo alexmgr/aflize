@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
             ifs.seekg(0, std::ios::beg);
             ifs.read(&buffer[0], file_size);
 
-            afl_forward(&buffer[0]);
+            afl_forward(&buffer[0], file_size);
         } else if (file_size == 0) {
             std::cerr << "Empty file: " << filename << "\n";
             exit(EXIT_FAILURE);

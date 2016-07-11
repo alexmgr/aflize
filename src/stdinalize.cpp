@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv) {
 
-    std::vector<char> buffer(AFLIZE_BUF_SIZE + 1);
+    std::vector<char> buffer(AFLIZE_BUF_SIZE);
 
 #ifdef AFLIZE_PERSIST
     while (__AFL_LOOP(AFLIZE_PERSIST_ITERATIONS)) {
@@ -18,9 +18,8 @@ int main(int argc, char **argv) {
 #endif
 
     std::cin.read(buffer.data(), AFLIZE_BUF_SIZE);
-    buffer[std::cin.gcount()] = 0;
 
-    afl_forward(&buffer[0]);
+    afl_forward(&buffer[0], std::cin.gcount());
 
 #ifdef AFLIZE_PERSIST
     }

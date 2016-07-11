@@ -6,7 +6,7 @@ INC_DIR = include
 
 CC = afl-clang
 CXX = afl-clang++
-CPPFLAGS = -I$(INC_DIR) -L$(LIB_DIR)
+CPPFLAGS = -I$(INC_DIR)
 LDFLAGS = -L$(LIB_DIR) -Wl,-rpath -Wl,$(LIB_DIR)
 LIBS =
 
